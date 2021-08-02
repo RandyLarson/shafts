@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B5DCBBC1-40E8-E104-7F2B-B4022C6F599E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem.InGameHints", "Unity.InputSystem.InGameHints.csproj", "{1A0005AF-79A0-C619-BA01-FD003206117B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{29FD3F69-0E9B-F132-7E4F-6887DD61DA39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5DCBBC1-40E8-E104-7F2B-B4022C6F599E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DCBBC1-40E8-E104-7F2B-B4022C6F599E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DCBBC1-40E8-E104-7F2B-B4022C6F599E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DCBBC1-40E8-E104-7F2B-B4022C6F599E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0005AF-79A0-C619-BA01-FD003206117B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0005AF-79A0-C619-BA01-FD003206117B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0005AF-79A0-C619-BA01-FD003206117B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0005AF-79A0-C619-BA01-FD003206117B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FD3F69-0E9B-F132-7E4F-6887DD61DA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FD3F69-0E9B-F132-7E4F-6887DD61DA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FD3F69-0E9B-F132-7E4F-6887DD61DA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FD3F69-0E9B-F132-7E4F-6887DD61DA39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
