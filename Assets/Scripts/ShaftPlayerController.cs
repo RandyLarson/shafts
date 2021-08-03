@@ -13,6 +13,7 @@ namespace Assets.Scripts.Player
         private Rigidbody2D Rigidbody2D { get; set; }
         private Animator WalkingAnimator { get; set; }
         private SpriteRenderer SpriteRenderer { get; set; }
+        private LadderClimber LadderClimber { get; set; }
         private Vector2 Movement { get; set; }
         public float Speed = .5f;
         private float Impedence = 1f;
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Player
             Rigidbody2D = GetComponent<Rigidbody2D>();
             WalkingAnimator = GetComponent<Animator>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
+            LadderClimber = GetComponent<LadderClimber>();
             //SceneObjects.TheGameController.WireUpPlayer(gameObject);
         }
 
@@ -41,6 +43,8 @@ namespace Assets.Scripts.Player
 
         private void FixedUpdate()
         {
+            Rigidbody2D.gravityScale = LadderClimber.IsOnLadder ? 0 : 4;
+
             if (Movement != Vector2.zero)
             {
                 Vector2 playerWorldPosition = (Vector2)transform.position + Movement;

@@ -19,9 +19,20 @@ public class ContactFatigueDamage : MonoBehaviour
 
     private float LastInflictedDamageAt = 0;
 
+    private GameObjectCollection<GameObject> Targets = new GameObjectCollection<GameObject>();
+
+
     private void Start()
     {
         LastInflictedDamageAt = 0;
+    }
+
+    private void Update()
+    {
+        foreach (var t in Targets.Members)
+        {
+            InfictDamage(t, t.transform.position);
+        }
     }
 
     bool TestGameObjectForApplicability(GameObject gameObject)
@@ -43,15 +54,15 @@ public class ContactFatigueDamage : MonoBehaviour
         if (!TestGameObjectForApplicability(collision.gameObject))
             return;
 
-        InfictDamage(collision, collision.gameObject);
+        Targets.RememberObject(collision.gameObject);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (!TestGameObjectForApplicability(collision.gameObject))
             return;
 
-        InfictDamage(collision, collision.gameObject);
+        Targets.ForgetObject(collision.gameObject);
     }
 
     private bool ApplyDamage(GameObject go)
@@ -65,7 +76,7 @@ public class ContactFatigueDamage : MonoBehaviour
         return hpOther != null;
     }
 
-    private void InfictDamage(Collision2D collision, GameObject other)
+    private void InfictDamage(GameObject other, Vector2 contactPt)
     {
         if (Time.time - LastInflictedDamageAt > DamageInterval)
         {
@@ -76,7 +87,7 @@ public class ContactFatigueDamage : MonoBehaviour
             {
                 if (DamageIndicator != null)
                 {
-                    var visual = Instantiate(DamageIndicator, collision.contacts[0].point, other.transform.rotation);
+                    var visual = Instantiate(DamageIndicator, contactPt, other.transform.rotation);
                     Destroy(visual, 2);
                 }
             }
