@@ -27,6 +27,12 @@ public class TouchDamage : MonoBehaviour
 			InfictDamage(collision, collision.gameObject);
 	}
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+		if (collision.gameObject.CompareTag(GameConstants.Player))
+			InfictDamage(collision, collision.gameObject);
+	}
+	
 	private void InfictDamage(Collision2D collision, GameObject other)
 	{
 		if (Time.time - LastInflictedDamageAt > DamageInterval)

@@ -53,182 +53,183 @@
     <UnityVersion>2021.1.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts-2dExtras\2d-extras\TerrainTile\TerrainTile.cs" />
-    <Compile Include="Assets\Scripts-Core\LevelHighlights.cs" />
     <Compile Include="Assets\Scripts-Core\Player\PlayerShip.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\Raider.cs" />
-    <Compile Include="Assets\Scripts-Core\Ships\AutoShipStabalizer.cs" />
-    <Compile Include="Assets\Scripts-Core\GameConstants.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\UIWeaponSlot.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\SoundExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\IMissionControl.cs" />
-    <Compile Include="Assets\Scripts-Core\Helpers\SpawnPayload.cs" />
-    <Compile Include="Assets\Scripts-Core\InvasivePlants\IInvasivePlant.cs" />
-    <Compile Include="Assets\Scripts-Core\DrillingBeam.cs" />
-    <Compile Include="Assets\Scripts-Core\GameUI.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\LevelStatsModel.cs" />
     <Compile Include="Assets\Scripts-Core\PlayerInputStyle.cs" />
-    <Compile Include="Assets\Scripts-Core\FreightStealingBandit.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\IResourceConsumer.cs" />
-    <Compile Include="Assets\Scripts-Core\VillagerController.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\TextMeshProExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\StatisticsController.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\CritialMissionItem.cs" />
     <Compile Include="Assets\Scripts-Core\Goals\ResourceAmount.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\DBToGameConverter.cs" />
-    <Compile Include="Assets\Scripts-Core\Launcher.cs" />
-    <Compile Include="Assets\Scripts-Core\Evolve.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\LogicExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\ResourceStat.cs" />
-    <Compile Include="Assets\Scripts-Core\DontCarryOverOnSceneLoad.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\GoalManager.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\MunitionSlot.cs" />
-    <Compile Include="Assets\Scripts-Core\Helpers\IDamageInflictor.cs" />
-    <Compile Include="Assets\Scripts-Core\SerializeMesh.cs" />
-    <Compile Include="Assets\Scripts-Core\CivilianFlightControl.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\Interceptor.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\IInventory.cs" />
-    <Compile Include="Assets\Scripts-Core\MainDisplay.cs" />
-    <Compile Include="Assets\Scripts-Core\TouchDamage.cs" />
-    <Compile Include="Assets\Scripts-Core\SelfDestruct.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\UIWeaponsController.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\GameModel.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\PlayerModel.cs" />
-    <Compile Include="Assets\Scripts-Core\InvasivePlants\Spawner.cs" />
-    <Compile Include="Assets\Scripts-Core\IItemProducer.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\StringExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\Mayfly.cs" />
     <Compile Include="Assets\Scripts-Core\UI\DiagnosticVisualizer.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\ProjectileController.cs" />
-    <Compile Include="Assets\Scripts-Core\Freight.cs" />
-    <Compile Include="Assets\Scripts-Core\VectorVisualization.cs" />
-    <Compile Include="Assets\Scripts-Core\Ships\ShipCharacteristics.cs" />
-    <Compile Include="Assets\Scripts-Core\PathFollower.cs" />
-    <Compile Include="Assets\Scripts-Core\Waypoint.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\Munition.cs" />
-    <Compile Include="Assets\Scripts-Core\UiHandler.cs" />
+    <Compile Include="Assets\Scripts-2dExtras\2d-extras\TerrainTile\TerrainTile.cs" />
     <Compile Include="Assets\Scripts-Core\DelayedSpawn.cs" />
-    <Compile Include="Assets\Scripts-Core\DestroyOnExit.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\GoalConfig.cs" />
-    <Compile Include="Assets\Scripts-Core\Helpers\ScanningHelpers.cs" />
-    <Compile Include="Assets\Scripts-Core\ResourceConsumer.cs" />
-    <Compile Include="Assets\Scripts-Core\Age.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\TimeGoal.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\ResourceDeliveryGoal.cs" />
-    <Compile Include="Assets\Scripts-Core\RandomRotator.cs" />
-    <Compile Include="Assets\Scripts-Core\Player\PlayerShipController.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\MainMenuController.cs" />
     <Compile Include="Assets\Scripts-Core\LevelWiring.cs" />
-    <Compile Include="Assets\Scripts-Core\Damage.cs" />
-    <Compile Include="Assets\Scripts-Core\InvasivePlants\ItemManager.cs" />
-    <Compile Include="Assets\Scripts-Core\Player\PlayerHealth.cs" />
-    <Compile Include="Assets\Scripts-Core\Camera2DFollow.cs" />
-    <Compile Include="Assets\Scripts-Core\ItemProducer.cs" />
     <Compile Include="Assets\Scripts-Core\LevelArea.cs" />
-    <Compile Include="Assets\Scripts-Core\Tug_StackBehavior.cs" />
-    <Compile Include="Assets\Scripts-Core\PeopleDropController.cs" />
-    <Compile Include="Assets\Scripts-Core\SpawnFreight.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\CriticalItemGoal.cs" />
-    <Compile Include="Assets\Scripts-Core\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts-Core\Mothership\MotherShipController.cs" />
-    <Compile Include="Assets\Scripts-Core\BeamController.cs" />
-    <Compile Include="Assets\Scripts-Core\ThrustBehaviorBase.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\RaiderMissionController.cs" />
+    <Compile Include="Assets\Scripts-Core\CollisionDetection.cs" />
+    <Compile Include="Assets\Scripts-Core\ThrusterInfo.cs" />
+    <Compile Include="Assets\Scripts-Core\InvasivePlants\Growth.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\GameModel.cs" />
+    <Compile Include="Assets\Scripts-Core\Freight.cs" />
+    <Compile Include="Assets\Scripts\ShaftPlayerController.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Scripts-Core\InvasivePlants\ItemManager.cs" />
+    <Compile Include="Assets\Scripts-Core\SpawnFreight.cs" />
     <Compile Include="Assets\Scripts-Core\Goals\Inventory.cs" />
     <Compile Include="Assets\Scripts-Core\Database\Models\ShipModel.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\ConcussionWeapon.cs" />
-    <Compile Include="Assets\Scripts-Core\Helpers\AudioFade.cs" />
-    <Compile Include="Assets\Scripts-Core\Mover.cs" />
-    <Compile Include="Assets\Scripts-Core\RunningLight.cs" />
-    <Compile Include="Assets\Scripts-Core\FreightDropController.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionTracker.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\TimerVisualizer.cs" />
     <Compile Include="Assets\Scripts-Core\UI\MidGameMenuController.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\SeedSpreader.cs" />
-    <Compile Include="Assets\Scripts-Core\DontDestroy.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\ResourceVisualizer.cs" />
     <Compile Include="Assets\Scripts-Core\Goals\GoalBase.cs" />
-    <Compile Include="Assets\Scripts-Core\LifecycleComplete.cs" />
     <Compile Include="Assets\Scripts-Core\Goals\Resource.cs" />
-    <Compile Include="Assets\Scripts-Core\AudioManager.cs" />
-    <Compile Include="Assets\Scripts-Core\GameController.cs" />
-    <Compile Include="Assets\Scripts-Core\Mothership\ShipSpawner.cs" />
-    <Compile Include="Assets\Scripts-Core\ThrusterBehavior.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\DamageTrigger.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\UIStatGoalController.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\RegionTrigger.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\DiagnosticController.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\Target.cs" />
-    <Compile Include="Assets\Scripts-Core\GameLevelStats.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\GuidedProjectileController.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionPlannerConfig.cs" />
-    <Compile Include="Assets\Scripts-Core\CloudDrift.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\DatabaseController.cs" />
-    <Compile Include="Assets\Scripts-Core\Shields\CityShieldTriggerController.cs" />
-    <Compile Include="Assets\Scripts-Core\PointAt.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\GlobalEventGoal.cs" />
-    <Compile Include="Assets\Scripts-Core\DamageVisualization.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionPlanner.cs" />
-    <Compile Include="Assets\Scripts-Core\ResourceAction.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\Pathfinding.cs" />
-    <Compile Include="Assets\Scripts-Core\GameOverController.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\InGameEvent.cs" />
-    <Compile Include="Assets\Scripts-Core\MeshGenerator.cs" />
-    <Compile Include="Assets\Scripts-Core\PatrolBeacon.cs" />
-    <Compile Include="Assets\Scripts-Core\Rotation.cs" />
-    <Compile Include="Assets\Scripts-Core\ActivateByLevel.cs" />
-    <Compile Include="Assets\Scripts-Core\CloudSpawner.cs" />
-    <Compile Include="Assets\Scripts-Core\ThrustParticleController.cs" />
-    <Compile Include="Assets\Scripts-Core\InvasivePlants\PlantManager.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\ProjectGoal.cs" />
-    <Compile Include="Assets\Scripts-Core\LevelCompletionController.cs" />
-    <Compile Include="Assets\Scripts-Core\CollisionDetection.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\MunitionModel.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\GameObjectExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\Player\PlayerFlightControl.cs" />
     <Compile Include="Assets\Scripts-Core\HealthPoints.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\InventoryHolder.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\CriticalCollection.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\LogicExtensions.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\GoalManager.cs" />
+    <Compile Include="Assets\Scripts-Core\Helpers\ScanningHelpers.cs" />
+    <Compile Include="Assets\Scripts-Core\DestroyByTime.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\RaiderMissionController.cs" />
+    <Compile Include="Assets\Scripts-Core\RunningLight.cs" />
+    <Compile Include="Assets\Scripts-Core\ThrusterBehavior.cs" />
+    <Compile Include="Assets\Scripts-Core\ResourceAction.cs" />
+    <Compile Include="Assets\Scripts-Core\ThrustParticleController.cs" />
+    <Compile Include="Assets\Scripts-Core\PowerUp.cs" />
+    <Compile Include="Assets\Scripts-Core\SampleScript.cs" />
+    <Compile Include="Assets\Scripts-Core\GameConstants.cs" />
+    <Compile Include="Assets\Samples\Input System\1.0.2\Custom Binding Composite\CustomComposite.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\UIWeaponsController.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\TimeGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\Age.cs" />
+    <Compile Include="Assets\Scripts-Core\ItemProducer.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\SeedSpreader.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\UIStatGoalController.cs" />
+    <Compile Include="Assets\Scripts-Core\PointAt.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\Pathfinding.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\InGameEvent.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\TimedEventCollection.cs" />
+    <Compile Include="Assets\Scripts-Core\InvasivePlants\IInvasivePlant.cs" />
+    <Compile Include="Assets\Scripts-Core\FreightStealingBandit.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\DBToGameConverter.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\DamageTrigger.cs" />
+    <Compile Include="Assets\Scripts-Core\LevelController.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\LevelStatsModel.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\TextMeshProExtensions.cs" />
+    <Compile Include="Assets\Scripts-Core\SerializeMesh.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\IInventory.cs" />
+    <Compile Include="Assets\Scripts-Core\SelfDestruct.cs" />
+    <Compile Include="Assets\Scripts-Core\Waypoint.cs" />
+    <Compile Include="Assets\Scripts-Core\ResourceConsumer.cs" />
+    <Compile Include="Assets\Scripts-Core\Player\PlayerShipController.cs" />
+    <Compile Include="Assets\Scripts-Core\Camera2DFollow.cs" />
+    <Compile Include="Assets\Scripts-Core\Mothership\ShipSpawner.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\MissleController.cs" />
+    <Compile Include="Assets\Scripts-Core\IGameGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\IMissionControl.cs" />
+    <Compile Include="Assets\Scripts-Core\Launcher.cs" />
+    <Compile Include="Assets\Scripts-Core\DontCarryOverOnSceneLoad.cs" />
+    <Compile Include="Assets\Scripts-Core\IItemProducer.cs" />
+    <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Scripts-Core\PeopleDropController.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\CriticalItemGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\AudioManager.cs" />
+    <Compile Include="Assets\Scripts-Core\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\DiagnosticController.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionPlannerConfig.cs" />
+    <Compile Include="Assets\Scripts-Core\Rotation.cs" />
+    <Compile Include="Assets\Scripts-Core\LevelCompletionController.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\ProjectGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\ThustBehavior.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\MunitionSlot.cs" />
+    <Compile Include="Assets\Scripts-Core\CivilianFlightControl.cs" />
+    <Compile Include="Assets\Scripts-Core\ResourceStat.cs" />
+    <Compile Include="Assets\Scripts-Core\DestroyOnExit.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\ResourceDeliveryGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\Mover.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\ResourceVisualizer.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\RegionTrigger.cs" />
+    <Compile Include="Assets\Scripts-Core\GameLevelStats.cs" />
+    <Compile Include="Assets\Scripts-Core\Shields\CityShieldTriggerController.cs" />
+    <Compile Include="Assets\Scripts-Core\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts-Core\Helpers\MoveToward.cs" />
     <Compile Include="Assets\Scripts-Core\LevelAnnotation.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\MissleController.cs" />
     <Compile Include="Assets\Scripts-Core\Munitions\BeamWeapon.cs" />
-    <Compile Include="Assets\Scripts-Core\Shields\ShieldController.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\InventoryHolder.cs" />
-    <Compile Include="Assets\Scripts-Core\ThrusterInfo.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\SurvivalSettings.cs" />
-    <Compile Include="Assets\Scripts-Core\InvasivePlants\Growth.cs" />
-    <Compile Include="Assets\Scripts-Core\PowerUp.cs" />
-    <Compile Include="Assets\Scripts-Core\Extensions\LoggingExtensions.cs" />
-    <Compile Include="Assets\Scripts-Core\SampleScript.cs" />
-    <Compile Include="Assets\Scripts-Core\Ships\ShipFlightController.cs" />
-    <Compile Include="Assets\Scripts-Core\LevelController.cs" />
-    <Compile Include="Assets\Scripts-Core\AimingHelpers.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\MessagePlayback.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\TimedEventCollection.cs" />
-    <Compile Include="Assets\Scripts-Core\MissionPlanning\RaiderMissionConfig.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\ShieldModel.cs" />
-    <Compile Include="Assets\Scripts-Core\Goals\CriticalCollection.cs" />
-    <Compile Include="Assets\Scripts-Core\VillageController.cs" />
-    <Compile Include="Assets\Scripts-Core\LevelIntroductionController.cs" />
-    <Compile Include="Assets\Scripts-Core\ThustBehavior.cs" />
-    <Compile Include="Assets\Scripts-Core\Helpers\AutoStabalizer.cs" />
     <Compile Include="Assets\Scripts-Core\UI\LevelInterlude.cs" />
-    <Compile Include="Assets\Scripts-Core\Database\Models\BaseModel.cs" />
-    <Compile Include="Assets\Scripts-Core\Munitions\TractorBeam.cs" />
-    <Compile Include="Assets\Scripts-Core\Shields\PlayerShieldController.cs" />
-    <Compile Include="Assets\Scripts-Core\IGameGoal.cs" />
     <Compile Include="Assets\Scripts-Core\PickUp.cs" />
-    <Compile Include="Assets\Scripts-Core\Shields\CityShieldController.cs" />
-    <Compile Include="Assets\Scripts-Core\UI\UIStatGoal.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Scripts-Core\Ships\AutoShipStabalizer.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\IResourceConsumer.cs" />
+    <Compile Include="Assets\Scripts-Core\Helpers\IDamageInflictor.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\Interceptor.cs" />
+    <Compile Include="Assets\Scripts-Core\InvasivePlants\Spawner.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\Munition.cs" />
+    <Compile Include="Assets\Scripts-Core\RandomRotator.cs" />
+    <Compile Include="Assets\Scripts-Core\Damage.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
-    <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Scripts-Core\GameOverController.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\MunitionModel.cs" />
+    <Compile Include="Assets\Scripts-Core\LevelIntroductionController.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\Raider.cs" />
+    <Compile Include="Assets\Scripts-Core\Mayfly.cs" />
+    <Compile Include="Assets\Scripts-Core\VectorVisualization.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\GoalConfig.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts-Core\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts-Core\LifecycleComplete.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionPlanner.cs" />
+    <Compile Include="Assets\Scripts-Core\Shields\CityShieldController.cs" />
+    <Compile Include="Assets\Scripts-Core\DrillingBeam.cs" />
+    <Compile Include="Assets\Scripts-Core\ThrustBehaviorBase.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\MissionTracker.cs" />
+    <Compile Include="Assets\Scripts-Core\FreightDropController.cs" />
+    <Compile Include="Assets\Scripts-Core\VillageController.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\TractorBeam.cs" />
+    <Compile Include="Assets\Scripts-Core\Helpers\SpawnPayload.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Scripts-Core\Shields\ShieldController.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\ShieldModel.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\Models\BaseModel.cs" />
+    <Compile Include="Assets\Scripts-Core\Shields\PlayerShieldController.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\UIStatGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\CritialMissionItem.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\StringExtensions.cs" />
+    <Compile Include="Assets\Scripts-Core\Helpers\AudioFade.cs" />
+    <Compile Include="Assets\Scripts-Core\GameController.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\Target.cs" />
+    <Compile Include="Assets\Scripts-Core\CloudDrift.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\GuidedProjectileController.cs" />
+    <Compile Include="Assets\Scripts-Core\DamageVisualization.cs" />
+    <Compile Include="Assets\Scripts-Core\PatrolBeacon.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\LoggingExtensions.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\ButtonJoystick.cs" />
-    <Compile Include="Assets\Scripts\ShaftPlayerController.cs" />
-    <Compile Include="Assets\Samples\Input System\1.0.2\Custom Binding Composite\CustomComposite.cs" />
+    <Compile Include="Assets\Scripts-Core\AimingHelpers.cs" />
+    <Compile Include="Assets\Scripts-Core\LevelHighlights.cs" />
+    <Compile Include="Assets\Scripts-Core\GameUI.cs" />
+    <Compile Include="Assets\Scripts-Core\VillagerController.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts-Core\MainDisplay.cs" />
+    <Compile Include="Assets\Scripts-Core\UiHandler.cs" />
+    <Compile Include="Assets\Scripts-Core\BeamController.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\GlobalEventGoal.cs" />
+    <Compile Include="Assets\Scripts-Core\CloudSpawner.cs" />
+    <Compile Include="Assets\Scripts-Core\PathFollower.cs" />
+    <Compile Include="Assets\Scripts-Core\Tug_StackBehavior.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\ConcussionWeapon.cs" />
+    <Compile Include="Assets\Scripts-Core\Database\DatabaseController.cs" />
+    <Compile Include="Assets\Scripts-Core\ActivateByLevel.cs" />
+    <Compile Include="Assets\Scripts-Core\InvasivePlants\PlantManager.cs" />
+    <Compile Include="Assets\Scripts-Core\Player\PlayerFlightControl.cs" />
+    <Compile Include="Assets\Scripts-Core\Ships\ShipFlightController.cs" />
+    <Compile Include="Assets\Scripts-Core\MissionPlanning\RaiderMissionConfig.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\UIWeaponSlot.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\SoundExtensions.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\StatisticsController.cs" />
+    <Compile Include="Assets\Scripts-Core\Evolve.cs" />
+    <Compile Include="Assets\Scripts-Core\TouchDamage.cs" />
+    <Compile Include="Assets\Scripts-Core\Munitions\ProjectileController.cs" />
+    <Compile Include="Assets\Scripts-Core\Ships\ShipCharacteristics.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\TimerVisualizer.cs" />
+    <Compile Include="Assets\Scripts-Core\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Scripts-Core\Goals\SurvivalSettings.cs" />
+    <Compile Include="Assets\Scripts-Core\UI\MessagePlayback.cs" />
+    <Compile Include="Assets\Scripts-Core\Helpers\AutoStabalizer.cs" />
+    <Compile Include="Assets\Scripts-Core\ContactFatigueDamage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -813,12 +814,6 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.15f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -831,32 +826,11 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
@@ -867,20 +841,11 @@
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="VSSettingsProvider">
       <HintPath>Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -897,14 +862,74 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -912,26 +937,11 @@
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -939,26 +949,17 @@
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
