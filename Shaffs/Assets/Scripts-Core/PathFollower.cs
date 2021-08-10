@@ -46,7 +46,8 @@ public class PathFollower : MonoBehaviour
 				if (i >= WorkingWaypoints.Length)
 					i = 0;
 
-				MoveToward.DebugVisualize = GameController.TheController.DiagnosticPathFindingVisualize && DebugPathVisuals;
+				if ( GameController.TheController != null )
+					MoveToward.DebugVisualize = GameController.TheController.DiagnosticPathFindingVisualize && DebugPathVisuals;
 
 				MoveToward.MoveToIntercept(
 					ShipCharacteristics,

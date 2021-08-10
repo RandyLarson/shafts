@@ -27,6 +27,8 @@ public class ShaftsGameController : MonoBehaviour
 
     private void Initialize()
     {
+        Assets.Scripts.Helpers.MoveToward.Initialize();
+
         GameStats.GameMode = GameMode.StartMenu;
         GameStats.CurrentPlayer = null;
         GameStats.GameController = null;

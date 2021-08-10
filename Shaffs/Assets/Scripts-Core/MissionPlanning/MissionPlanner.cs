@@ -445,6 +445,9 @@ public class MissionPlanner : MonoBehaviour
 	{
 		if (waypointFollower == null)
 			return;
+		
+		if (GameController.TheController == null)
+			return;
 
 		float minAltitude = GameController.TheController.MinPatrolAltitude;
 

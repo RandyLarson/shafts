@@ -18,7 +18,7 @@ namespace Assets.Scripts.Helpers
 
 		static public void Initialize()
 		{
-			DebugVisualize = GameController.TheController.DiagnosticPathFindingVisualize;
+			DebugVisualize = GameController.TheController == null ? false : GameController.TheController.DiagnosticPathFindingVisualize;
 			if (DebugVisualize)
 			{
 				HitMarker = GameController.TheController.DiagnosticHitMarker;

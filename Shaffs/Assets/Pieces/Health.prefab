@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3340529285546100642, guid: 8a785007de9586343a9e0e3aa02eea25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,13 +126,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Kind: 1
-  Amount: 20
+  Amount: 200
   Payload: {fileID: 0}
   UsageEffect: {fileID: 5710678515968824580, guid: 99b0d767c9dbb0347a994a4639ce203c, type: 3}
   RadiusFactor: 2.5
   FadeOutDuration: 0.5
   DestroyOnUse: 1
-  DisableRbOnUse: 1
+  DisableRbOnUse: 0
 --- !u!114 &5648625812566830620
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,29 +45,44 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        CheckForHealthPonts(collision.gameObject);
+    }
+
+    private bool CheckForHealthPonts(GameObject go)
+    {
+        if (TimeOfUse != null)
+            return false;
+
+        var hp = go.gameObject.GetComponent<HealthPoints>();
+        if (hp != null)
+        {
+            ApplyPowerup(hp);
+            return true;
+        }
+
+        return false;
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (TimeOfUse != null)
             return;
 
-        var hp = collision.gameObject.GetComponent<HealthPoints>();
-        if (hp != null)
+        if (CheckForHealthPonts(collision.gameObject))
+            return;
+
+        var thePlayer = collision.gameObject.GetComponent<PlayerShip>();
+        if (thePlayer != null)
         {
-            ApplyPowerup(hp);
+            ApplyPowerup(thePlayer);
         }
         else
         {
-
-            var thePlayer = collision.gameObject.GetComponent<PlayerShip>();
-            if (thePlayer != null)
-            {
-                ApplyPowerup(thePlayer);
-            }
-            else
-            {
-                var consumer = collision.gameObject.GetComponent<ResourceConsumer>();
-                ApplyPowerup(consumer);
-            }
+            var consumer = collision.gameObject.GetComponent<ResourceConsumer>();
+            ApplyPowerup(consumer);
         }
     }
 

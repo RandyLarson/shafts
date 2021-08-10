@@ -59,7 +59,7 @@ public class ShipCharacteristics : MonoBehaviour
 		if (AutoForce)
 		{
 			EngineForce = MaxSpeed / TimeToMaxSpeed * OurRB.mass;
-			DragAtMaxSpeed = /*.9f**/ EngineForce / OurRB.mass / MaxSpeed * GameController.TheController.AutoForceDragMultiplier;
+			DragAtMaxSpeed = /*.9f**/ EngineForce / OurRB.mass / MaxSpeed * (GameController.TheController == null ? 1 : GameController.TheController.AutoForceDragMultiplier);
 			//EngineForce *= 1.2f;
 			OurRB.drag = 0;
 		}

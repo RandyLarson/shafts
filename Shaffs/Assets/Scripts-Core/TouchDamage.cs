@@ -37,6 +37,12 @@ public class TouchDamage : MonoBehaviour
             InflictDamageUpon(collision.gameObject, collision.contacts[0].point);
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (TagDomain.IsInDomain(collision.gameObject))
+            Targets.ForgetObject(collision.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (TagDomain.IsInDomain(collision.gameObject))

@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using Assets.Scripts.Extensions;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ namespace Assets.Scripts.Player
     {
         //public MapController MapController;
         //public SceneObjects SceneObjects;
+
+        [Tooltip("A gameobject that will be enabled when contact damage is available.")]
+        public GameObject ContactDamageArea;
 
         private Rigidbody2D Rigidbody2D { get; set; }
         private Animator WalkingAnimator { get; set; }
@@ -114,7 +118,14 @@ namespace Assets.Scripts.Player
                     IsFiring = false;
             }
 
+            ContactDamageArea.SafeSetActive(IsFiring);
+
             LastMv = Movement;
+        }
+
+        public void OnWeapons(InputValue value)
+        {
+
         }
 
         public void OnMove(InputValue value)
@@ -124,17 +135,18 @@ namespace Assets.Scripts.Player
 
         public void OnFire()
         {
-            if (AmmoCount > 0)
+//            if (AmmoCount > 0)
             {
                 Debug.Log($"Firing. Ammo remaining: {AmmoCount}");
                 SendFire();
                 IsFiring = true;
                 AttackingTime = Time.time;
             }
-            else
-            {
-                Debug.Log("I'm outta ammo");
-            }
+        //    else
+        //    {
+        //        Debug.Log("I'm outta ammo");
+        //    }
+        //
         }
 
         private void SomebodyIsOutOfAmmo()

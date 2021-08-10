@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab3e11b2ce565e48a7873f567c41c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContactDamageArea: {fileID: 547363661}
   Speed: 0.5
   AmmoCount: 20000
   PlayerStats: {fileID: 11400000, guid: a5e4ce4beee4c6546a760d279838fdea, type: 2}

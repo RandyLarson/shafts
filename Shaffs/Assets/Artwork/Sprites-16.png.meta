@@ -65,6 +65,12 @@ TextureImporter:
   - first:
       213: -3340529285546100642
     second: Health
+  - first:
+      213: 101074417390400909
+    second: FireFly-1
+  - first:
+      213: -2774761553809113124
+    second: FireFly-2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -606,7 +612,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,6 +620,48 @@ TextureImporter:
       bones: []
       spriteID: e583c3d405e04a1d0800000000000000
       internalID: -3340529285546100642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireFly-1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d853f68a5a6176100800000000000000
+      internalID: 101074417390400909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireFly-2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdffbc071111e79d0800000000000000
+      internalID: -2774761553809113124
       vertices: []
       indices: 
       edges: []

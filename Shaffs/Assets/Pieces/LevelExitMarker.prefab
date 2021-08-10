@@ -5090,7 +5090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevelSceneName: 
-  DelayUntilLoad: 3
+  DelayUntilLoad: 1.5
   SpawnOnEntry: {fileID: 5710678515968824580, guid: f22b635054f936d46adb60fcdc364dd9, type: 3}
 --- !u!1 &5897566894420335886
 GameObject:
