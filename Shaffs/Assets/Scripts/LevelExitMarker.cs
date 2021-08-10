@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelExitMarker : MonoBehaviour
 {
-    public SceneAsset NextLevel;
+    public string NextLevelSceneName;
     public float DelayUntilLoad = 1;
     public GameObject SpawnOnEntry;
     private float LoadNextLevelTime = 0;
 
     private void LateUpdate()
     {
-        if (NextLevel == null)
+        if (NextLevelSceneName == null)
             return;
 
         if (LoadNextLevelTime > 0 && Time.time > LoadNextLevelTime)
         {
-            SceneManager.LoadScene(NextLevel.name, LoadSceneMode.Single);
+            SceneManager.LoadScene(NextLevelSceneName, LoadSceneMode.Single);
         }
     }
 

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: GameStats
   m_EditorClassIdentifier: 
   GameMode: 0
-  GameControllerScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  StartingLevel: {fileID: 102900000, guid: 6f173c132ae1129459e56990acb97f6f, type: 3}
+  GameControllerSceneName: GameControl
+  StartingLevelName: Level1
   CurrentLevel: 
   PlayerPrototype: {fileID: 3610049359444282552, guid: c1b14755bb74c7247a0af0cfb47441e8, type: 3}
   GameController: {fileID: 0}
   CurrentPlayer: {fileID: 0}
+  InDesignMode: 0

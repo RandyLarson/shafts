@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmt: 20
-  DamageInterval: 0.5
-  DamageIndicator: {fileID: 0}
+  DamageInterval: 0.25
+  DamageIndicator: {fileID: 5710678515968824580, guid: e7260b62eb335f548a1a3b4071659c6e, type: 3}
 --- !u!114 &6781344674379367052
 MonoBehaviour:
   m_ObjectHideFlags: 0

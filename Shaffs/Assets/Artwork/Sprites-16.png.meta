@@ -62,6 +62,9 @@ TextureImporter:
   - first:
       213: -7488436047931661478
     second: ExitMarker
+  - first:
+      213: -3340529285546100642
+    second: Health
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -582,7 +585,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -590,6 +593,27 @@ TextureImporter:
       bones: []
       spriteID: a53adcff61bb31890800000000000000
       internalID: -7488436047931661478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e583c3d405e04a1d0800000000000000
+      internalID: -3340529285546100642
       vertices: []
       indices: 
       edges: []

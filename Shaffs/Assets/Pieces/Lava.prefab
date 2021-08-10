@@ -32,6 +32,14 @@ PrefabInstance:
       propertyPath: DamageAmt
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1554898580738538779, guid: 7a695deb532265d43a31749cd29792ac, type: 3}
+      propertyPath: DamageInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554898580738538779, guid: 7a695deb532265d43a31749cd29792ac, type: 3}
+      propertyPath: DamageIndicator
+      value: 
+      objectReference: {fileID: 5710678515968824580, guid: e7260b62eb335f548a1a3b4071659c6e, type: 3}
     - target: {fileID: 2910831643791725278, guid: 7a695deb532265d43a31749cd29792ac, type: 3}
       propertyPath: Domain.Array.size
       value: 2

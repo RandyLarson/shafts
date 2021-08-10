@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

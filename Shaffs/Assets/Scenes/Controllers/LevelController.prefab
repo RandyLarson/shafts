@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7917912584937354947}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameStats: {fileID: 0}
   PlayerStartLocation: {fileID: 0}
+  ForceNewPlayerSpawn: 0
+  NewPlayerPrototype: {fileID: 0}
 --- !u!1 &7917912585682029869
 GameObject:
   m_ObjectHideFlags: 0

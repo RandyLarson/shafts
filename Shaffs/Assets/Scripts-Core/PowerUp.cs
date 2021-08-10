@@ -1,4 +1,5 @@
 ﻿using Milkman;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -49,15 +50,24 @@ public class PowerUp : MonoBehaviour
         if (TimeOfUse != null)
             return;
 
-        var thePlayer = collision.gameObject.GetComponent<PlayerShip>();
-        if (thePlayer != null)
+        var hp = collision.gameObject.GetComponent<HealthPoints>();
+        if (hp != null)
         {
-            ApplyPowerup(thePlayer);
+            ApplyPowerup(hp);
         }
         else
         {
-            var consumer = collision.gameObject.GetComponent<ResourceConsumer>();
-            ApplyPowerup(consumer);
+
+            var thePlayer = collision.gameObject.GetComponent<PlayerShip>();
+            if (thePlayer != null)
+            {
+                ApplyPowerup(thePlayer);
+            }
+            else
+            {
+                var consumer = collision.gameObject.GetComponent<ResourceConsumer>();
+                ApplyPowerup(consumer);
+            }
         }
     }
 
@@ -135,16 +145,37 @@ public class PowerUp : MonoBehaviour
         }
     }
 
-    private void ApplyPowerup(PlayerShip toPlayer)
+    private void CreateUsageEffect()
     {
-        if (toPlayer == null)
-            return;
-
         if (UsageEffect != null)
         {
             var effect = GameObject.Instantiate(UsageEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
         }
+    }
+
+    private void ApplyPowerup(HealthPoints hp)
+    {
+        if (hp == null)
+            return;
+
+
+        switch (Kind)
+        {
+            case PowerUpKind.Health:
+                CreateUsageEffect();
+                hp.AdjustHealthBy(Amount);
+                ItemWasUsed();
+                break;
+        }
+    }
+
+    private void ApplyPowerup(PlayerShip toPlayer)
+    {
+        if (toPlayer == null)
+            return;
+
+        CreateUsageEffect();
 
         switch (Kind)
         {

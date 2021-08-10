@@ -11,7 +11,7 @@ public class OverallGameController : MonoBehaviour
         Debug.Log("Overall Game controller");
         GameStats.GameMode = GameMode.StartMenu;
 
-        if (GameStats.GameControllerScene != null)
-            SceneManager.LoadScene(GameStats.GameControllerScene.name);
+        if (GameStats.GameControllerSceneName != null)
+            SceneManager.LoadScene(GameStats.GameControllerSceneName);
     }
 }

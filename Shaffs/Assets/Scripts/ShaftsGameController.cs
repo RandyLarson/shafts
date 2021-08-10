@@ -1,6 +1,7 @@
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets._2D;
 
@@ -86,13 +87,46 @@ public class ShaftsGameController : MonoBehaviour
             case GameMode.RestartGameImmediate:
                 GameStats.CurrentPlayer.SafeDestroy();
                 GameStats.CurrentPlayer = null;
-                SceneManager.LoadScene(GameStats.StartingLevel.name);
+                LoadOrInitializeScene(GameStats.StartingLevelName);
                 SwitchToGameMode(GameMode.StartingLevel);
                 break;
             case GameMode.AboutGame:
                 break;
             case GameMode.GameCredits:
                 break;
+        }
+    }
+
+    private void LoadOrInitializeScene(string sceneName)
+    {
+        bool loadStartingScene = true;
+
+//        if ( GameStats.InDesignMode && SceneManager.sceneCount > 1)
+        {
+            var levelControllers = GameObject.FindGameObjectsWithTag("LevelController");
+            for (int i=0; i<levelControllers.Length; i++)
+            {
+                var itsController = levelControllers[i].GetComponent<ShaftsLevelController>();
+                if ( itsController != null )
+                {
+                    loadStartingScene = false;
+                    itsController.InitializeLevel();
+                    break;
+                }
+            }
+            //for (int i=0; i<  SceneManager.sceneCount; i++ )
+            //{
+            //    var theScene = SceneManager.GetSceneAt(i);
+
+            //}
+            //    NoLoadScene = true;
+
+
+        }
+
+        if (loadStartingScene)
+        {
+            SceneManager.LoadScene(GameStats.StartingLevelName);
         }
     }
 

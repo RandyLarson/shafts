@@ -21,8 +21,8 @@ public class GameStats : ScriptableObject
     public GameMode GameMode = GameMode.StartMenu;
     //    public string GameControllerScene = "GameControl";
     //    public string StartingLevel;
-    public SceneAsset GameControllerScene;
-    public SceneAsset StartingLevel;
+    public string GameControllerSceneName;
+    public string StartingLevelName;
 
     public string CurrentLevel;
 
@@ -31,5 +31,7 @@ public class GameStats : ScriptableObject
     // Runtime items:
     public ShaftsGameController GameController;
     public ShaftPlayerController CurrentPlayer;
+
+    public bool InDesignMode = false;
 }
 
