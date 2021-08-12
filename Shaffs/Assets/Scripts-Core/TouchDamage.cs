@@ -24,6 +24,12 @@ public class TouchDamage : MonoBehaviour
         TagDomain = GetComponent<TagDomain>();
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (TagDomain.IsInDomain(other))
+            InflictDamageUpon(other, other.transform.position);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
 
     {

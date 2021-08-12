@@ -3356,9 +3356,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
-      propertyPath: GameStats
-      value: 
-      objectReference: {fileID: 11400000, guid: a4f24b106921f024aa3151ad5a0670e9, type: 2}
+      propertyPath: Fortune
+      value: Hello there. Gather, climb and find the exit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
+      propertyPath: LevelName
+      value: I 1:4
+      objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: PlayerStartLocation
       value: 

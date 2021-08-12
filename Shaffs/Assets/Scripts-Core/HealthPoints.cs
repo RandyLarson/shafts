@@ -66,7 +66,7 @@ public class HealthPoints : MonoBehaviour, IHealthCallback
 		}
 	}
 
-	public void VisualzeDeath()
+    public void VisualzeDeath()
     {
 		if (Explosion != null)
 		{

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19ac7e6d0d9eb64b82eee0cf0d87f85, type: 3}
   m_Name: GameStats
   m_EditorClassIdentifier: 
-  GameMode: 0
+  GameMode: 5
   GameControllerSceneName: GameControl
-  StartingLevelName: Level1
-  CurrentLevel: 
+  StartingLevelName: Level5
+  CurrentLevel: 5
   PlayerPrototype: {fileID: 3610049359444282552, guid: c1b14755bb74c7247a0af0cfb47441e8, type: 3}
   GameController: {fileID: 0}
   CurrentPlayer: {fileID: 0}
-  InDesignMode: 0
+  Fortune: Shaffs!
+  StartingTutorialLevel: Level1

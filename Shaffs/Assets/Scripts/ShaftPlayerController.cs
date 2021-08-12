@@ -24,6 +24,7 @@ namespace Assets.Scripts.Player
         private float Impedence = 1f;
         public int AmmoCount = 20000;
         public PlayerStats PlayerStats;
+        public GameStats GameStats;
 
         private int AnimHashIdle { get; set; } = Animator.StringToHash("Idle");
         private int AnimHashShiv { get; set; } = Animator.StringToHash("Shiving");
@@ -83,9 +84,12 @@ namespace Assets.Scripts.Player
 
         private void FixedUpdate()
         {
+            if (GameStats.GameMode != GameMode.Playing)
+                return;
+
             Rigidbody2D.gravityScale = LadderClimber.IsOnLadder ? 0 : 4;
 
-            WalkingAnimator.SetBool(AnimHashIdle, Movement.x == 0);
+            WalkingAnimator.SetBool(AnimHashIdle, Movement == Vector2.zero && !LadderClimber.IsOnLadder);
             WalkingAnimator.SetBool(AnimHashShiv, IsFiring);
 
             if (SpriteRenderer != null)
@@ -94,19 +98,21 @@ namespace Assets.Scripts.Player
                 //if (math.sign(Movement.x) != math.sign(LastMv.x))
                 //Debug.Log($"MovementX: {Movement}");
 
-                if ( Movement.x != 0 )
+                if (Movement.x != 0)
                     transform.rotation = Quaternion.Euler(0, Movement.x < 0 ? 180 : 0, 0);
             }
 
-                if (Movement != Vector2.zero)
-                {
-                    Vector2 playerWorldPosition = (Vector2)transform.position + (Vector2)math.abs(Movement);
-                    //Rigidbody2D.position += Movement * Speed * Impedence;
-                    Rigidbody2D.position += Movement * Speed;
-                }
+            if (Movement != Vector2.zero)
+            {
+                Vector2 playerWorldPosition = (Vector2)transform.position + (Vector2)math.abs(Movement);
+                //Rigidbody2D.position += Movement * Speed * Impedence;
+                Rigidbody2D.position += Movement * Speed;
+                if (LadderClimber.IsOnLadder)
+                    Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+            }
             else
             {
-                if ( LadderClimber.IsOnLadder )
+                if (LadderClimber.IsOnLadder)
                 {
                     Rigidbody2D.velocity = Vector2.zero;
                 }
@@ -135,18 +141,18 @@ namespace Assets.Scripts.Player
 
         public void OnFire()
         {
-//            if (AmmoCount > 0)
+            //            if (AmmoCount > 0)
             {
                 Debug.Log($"Firing. Ammo remaining: {AmmoCount}");
                 SendFire();
                 IsFiring = true;
                 AttackingTime = Time.time;
             }
-        //    else
-        //    {
-        //        Debug.Log("I'm outta ammo");
-        //    }
-        //
+            //    else
+            //    {
+            //        Debug.Log("I'm outta ammo");
+            //    }
+            //
         }
 
         private void SomebodyIsOutOfAmmo()

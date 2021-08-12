@@ -5,7 +5,9 @@ using UnityEngine;
 
 public enum GameMode
 {
+    StartTutorial,
     RestartGameImmediate,
+    RestartLevel,
     StartMenu,
     StartingLevel,
     Playing,
@@ -32,6 +34,8 @@ public class GameStats : ScriptableObject
     public ShaftsGameController GameController;
     public ShaftPlayerController CurrentPlayer;
 
-    public bool InDesignMode = false;
+    public string Fortune;
+
+    public string StartingTutorialLevel;
 }
 

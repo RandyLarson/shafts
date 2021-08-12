@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513869ebe8c0dd545ac638f4b8a846ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 20
-  DamageInterval: 0.25
+  DamageAmt: 22
+  DamageInterval: 0.15
   DamageIndicator: {fileID: 5710678515968824580, guid: e7260b62eb335f548a1a3b4071659c6e, type: 3}
 --- !u!114 &6781344674379367052
 MonoBehaviour:

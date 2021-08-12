@@ -15,6 +15,11 @@ GameObject:
   - component: {fileID: 3488274405931255274}
   - component: {fileID: 2121029014}
   - component: {fileID: 2688498761428630990}
+  - component: {fileID: 7197654927716623122}
+  - component: {fileID: 5964611906940038051}
+  - component: {fileID: -8419978361817640079}
+  - component: {fileID: 5065489941673126772}
+  - component: {fileID: 6134018936601308107}
   m_Layer: 0
   m_Name: Beholder
   m_TagString: Creature
@@ -77,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8248543377919322394, guid: 0441cbbdcf4bfc34caec2e738370d20a, type: 3}
+  m_Sprite: {fileID: -907730532275357343, guid: 230b36c35d92b3a48bbd642396cd48a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,7 +148,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.2
+  m_Radius: 5.82
 --- !u!114 &2121029014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513869ebe8c0dd545ac638f4b8a846ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 10
-  DamageInterval: 1
+  DamageAmt: 50
+  DamageInterval: 0.3
   DamageIndicator: {fileID: 0}
 --- !u!114 &2688498761428630990
 MonoBehaviour:
@@ -171,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 100
   MaxHP: 0
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
@@ -182,3 +187,97 @@ MonoBehaviour:
   DisableAtZero: 0
   Explosion: {fileID: 0}
   Visualizer: {fileID: 0}
+--- !u!114 &7197654927716623122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886374189914673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589d964be4359db4084bfff3ff52c68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Domain:
+  - Player
+--- !u!114 &5964611906940038051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886374189914673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57324e538ece5542b1aba10dfdf9d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EngineForce: 0
+  AutoForce: 1
+  MaxSpeed: 25
+  TimeToMaxSpeed: 10
+  ProximitySlowingFactor: 1.4
+  ManeuveringDrag: 0.6
+  ManeuveringAngle: 0.15
+  DragAtMaxSpeed: 0
+  DragMinimum: 0.2
+  LastCourseVector: {x: 0, y: 0, z: 0}
+  TerrainCheckInterval: 0.1
+--- !u!114 &-8419978361817640079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886374189914673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ef2585e5abe664cbf3f55b4b354e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints: []
+  WorkingWaypoints: []
+  FollowBackToStart: 1
+  MaxNumberOfCycles: 0
+  Paused: 0
+  DestroyWhenDone: 0
+  SlowAtWayPoints: 1
+  DebugPathVisuals: 0
+  AdditionalTagsToAvoid: []
+--- !u!114 &5065489941673126772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886374189914673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3b258bd14367a4e8067e528d55c223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentShipKind: 1
+  CurrentShipMode: 0
+  Mission: 3
+  RadarDistance: 60
+  MaxDistanceToTarget: 60
+  TargetTags:
+  - Player
+  MissionTargetKind: 1
+  OnlyLaunchIfTargetAvailable: 1
+--- !u!114 &6134018936601308107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886374189914673675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb23b2f845c0b40bc86ed03ed25a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApproachXClosestSide: 1
+  ApproachYClosestSide: 1
+  ApproachOffset: {x: 0, y: 0}

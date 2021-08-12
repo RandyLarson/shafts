@@ -7,10 +7,11 @@ public enum PlayerStatKind
     Gold
 }
 
+
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/Shaffs/PlayerStats", order = 1)]
 public class PlayerStats : ScriptableObject
 {
-    public int Level;
+    public string Level;
     public float Health;
     public float Gold;
 }

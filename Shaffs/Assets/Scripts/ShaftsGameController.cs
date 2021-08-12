@@ -1,5 +1,6 @@
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player;
+using System.Net;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
@@ -87,48 +88,53 @@ public class ShaftsGameController : MonoBehaviour
             case GameMode.Paused:
                 break;
             case GameMode.RestartGameImmediate:
-                GameStats.CurrentPlayer.SafeDestroy();
-                GameStats.CurrentPlayer = null;
-                LoadOrInitializeScene(GameStats.StartingLevelName);
+                LoadOrInitializeScene(false, true);
                 SwitchToGameMode(GameMode.StartingLevel);
                 break;
             case GameMode.AboutGame:
                 break;
             case GameMode.GameCredits:
                 break;
+            case GameMode.RestartLevel:
+                LoadOrInitializeScene(false, false);
+                SwitchToGameMode(GameMode.StartingLevel);
+                break;
+            case GameMode.StartTutorial:
+                LoadOrInitializeScene(true, false);
+                SwitchToGameMode(GameMode.StartingLevel);
+                break;
         }
     }
 
-    private void LoadOrInitializeScene(string sceneName)
+    private void LoadOrInitializeScene(bool loadTutorial, bool loadStartingScene)
     {
-        bool loadStartingScene = true;
+        if (Application.isEditor && SceneManager.sceneCount > 1)
+            loadStartingScene = false;
 
-//        if ( GameStats.InDesignMode && SceneManager.sceneCount > 1)
+        GameStats.CurrentPlayer.SafeDestroy();
+        GameStats.CurrentPlayer = null;
+        if (false == loadStartingScene)
         {
             var levelControllers = GameObject.FindGameObjectsWithTag("LevelController");
-            for (int i=0; i<levelControllers.Length; i++)
+            for (int i = 0; i < levelControllers.Length; i++)
             {
                 var itsController = levelControllers[i].GetComponent<ShaftsLevelController>();
-                if ( itsController != null )
+                if (itsController != null)
                 {
                     loadStartingScene = false;
                     itsController.InitializeLevel();
                     break;
                 }
             }
-            //for (int i=0; i<  SceneManager.sceneCount; i++ )
-            //{
-            //    var theScene = SceneManager.GetSceneAt(i);
-
-            //}
-            //    NoLoadScene = true;
-
-
         }
 
         if (loadStartingScene)
         {
             SceneManager.LoadScene(GameStats.StartingLevelName);
+        }
+        else if (loadTutorial)
+        {
+            SceneManager.LoadScene(GameStats.StartingTutorialLevel);
         }
     }
 
@@ -153,9 +159,7 @@ public class ShaftsGameController : MonoBehaviour
                 uiLevelStartState = true;
                 var fader = LevelStartingScreen.GetComponent<FadeOut>();
                 if (fader != null)
-                {
-                    fader.StartFade();
-                }
+                    fader.Initialize();
                 break;
             case GameMode.GameOver:
                 uiGameOverState = true;
@@ -171,6 +175,8 @@ public class ShaftsGameController : MonoBehaviour
                 break;
             case GameMode.GameCredits:
                 uiGameCreditsState = true;
+                break;
+            case GameMode.RestartLevel:
                 break;
         }
 
@@ -191,9 +197,20 @@ public class ShaftsGameController : MonoBehaviour
         SwitchToGameMode(GameMode.RestartGameImmediate);
     }
 
-    public void StartLevel()
+    public void TransitionToStartMenu()
     {
-        SwitchToGameMode(GameMode.StartingLevel);
+        SwitchToGameMode(GameMode.StartMenu);
+    }
+
+
+    public void StartTutorial()
+    {
+        SwitchToGameMode(GameMode.StartTutorial);
+    }
+
+    public void RestartLevel()
+    {
+        SwitchToGameMode(GameMode.RestartLevel);
     }
 
 

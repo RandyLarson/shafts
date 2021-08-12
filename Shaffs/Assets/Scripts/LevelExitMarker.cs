@@ -1,14 +1,16 @@
 using Assets.Scripts.Extensions;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelExitMarker : MonoBehaviour
 {
+    public GameStats GameStats;
     public string NextLevelSceneName;
     public float DelayUntilLoad = 1;
     public GameObject SpawnOnEntry;
+
     private float LoadNextLevelTime = 0;
+
 
     private void LateUpdate()
     {
@@ -17,7 +19,10 @@ public class LevelExitMarker : MonoBehaviour
 
         if (LoadNextLevelTime > 0 && Time.time > LoadNextLevelTime)
         {
-            SceneManager.LoadScene(NextLevelSceneName, LoadSceneMode.Single);
+            if (NextLevelSceneName.HasNoContent())
+                GameStats.GameController.SwitchToGameMode(GameMode.StartMenu);
+            else
+                SceneManager.LoadScene(NextLevelSceneName, LoadSceneMode.Single);
         }
     }
 

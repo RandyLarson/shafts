@@ -191,6 +191,7 @@
     <Compile Include="Assets\Scripts-Core\Damage.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\FortuneCookieTextElement.cs" />
     <Compile Include="Assets\Scripts-Core\Utility\GameObjectCollection.cs" />
     <Compile Include="Assets\Scripts-Core\GameOverController.cs" />
     <Compile Include="Assets\Scripts-Core\Database\Models\MunitionModel.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Assets\Scripts-Core\IFreight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Ladder.cs" />
+    <Compile Include="Assets\EnableChildren.cs" />
     <Compile Include="Assets\Scripts-Core\Goals\CritialMissionItem.cs" />
     <Compile Include="Assets\Scripts-Core\Extensions\StringExtensions.cs" />
     <Compile Include="Assets\Scripts\OverallGameController.cs" />

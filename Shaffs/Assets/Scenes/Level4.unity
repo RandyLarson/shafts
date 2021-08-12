@@ -3309,7 +3309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 294360482992503352, guid: 0c0f4b5699f00bb4ca80bb418ef348f7, type: 3}
       propertyPath: NextLevelSceneName
-      value: Level4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1210066472380107420, guid: 0c0f4b5699f00bb4ca80bb418ef348f7, type: 3}
       propertyPath: m_RootOrder
@@ -3381,9 +3381,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
-      propertyPath: GameStats
-      value: 
-      objectReference: {fileID: 11400000, guid: a4f24b106921f024aa3151ad5a0670e9, type: 2}
+      propertyPath: Fortune
+      value: Death from above?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
+      propertyPath: LevelName
+      value: I 4:4
+      objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: ForceNewPlayerSpawn
       value: 0

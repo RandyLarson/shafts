@@ -5089,6 +5089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032e917b043e2504a902fe3cdc23719f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameStats: {fileID: 11400000, guid: a4f24b106921f024aa3151ad5a0670e9, type: 2}
   NextLevelSceneName: 
   DelayUntilLoad: 1.5
   SpawnOnEntry: {fileID: 5710678515968824580, guid: f22b635054f936d46adb60fcdc364dd9, type: 3}

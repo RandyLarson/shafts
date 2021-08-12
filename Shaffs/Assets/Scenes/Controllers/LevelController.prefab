@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c0044264d8c674197940dfcc7b6d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStats: {fileID: 0}
+  GameStats: {fileID: 11400000, guid: a4f24b106921f024aa3151ad5a0670e9, type: 2}
+  PlayerStats: {fileID: 11400000, guid: a5e4ce4beee4c6546a760d279838fdea, type: 2}
   PlayerStartLocation: {fileID: 0}
   ForceNewPlayerSpawn: 0
+  LevelName: 
   NewPlayerPrototype: {fileID: 0}
 --- !u!1 &7917912585682029869
 GameObject:

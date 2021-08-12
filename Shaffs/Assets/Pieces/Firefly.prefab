@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 1924579703022383920}
   - component: {fileID: 6017485721836452592}
   - component: {fileID: 6057443686385389136}
+  - component: {fileID: 2193179197519217323}
   m_Layer: 0
   m_Name: Firefly
   m_TagString: Creature
@@ -417,3 +418,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 500
   RotationAxis: 2
+--- !u!95 &2193179197519217323
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599773963785945560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3c2a092f88094f4a8886703f65a639e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
