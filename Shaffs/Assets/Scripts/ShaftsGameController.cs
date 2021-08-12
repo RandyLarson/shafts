@@ -2,6 +2,7 @@ using Assets.Scripts.Extensions;
 using Assets.Scripts.Player;
 using System.Net;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets._2D;
@@ -9,6 +10,7 @@ using UnityStandardAssets._2D;
 public class ShaftsGameController : MonoBehaviour
 {
     public GameObject UiTitleScreen;
+    public GameObject UiPauseScreen;
     public GameObject UiPlayerStatsScreen;
     public GameObject UiAboutGameScreen;
     public GameObject UiGameCreditsScreen;
@@ -41,6 +43,18 @@ public class ShaftsGameController : MonoBehaviour
             fader.OnLevelIntroComplete += OnLevelIntroComplete;
         }
         GameStats.GameController = this;
+    }
+
+    private void FixedUpdate()
+    {
+        var kbd = Keyboard.current;
+        if ( kbd != null )
+        {
+            if ( kbd.escapeKey.isPressed )
+            {
+                SwitchToPauseUi();
+            }
+        }
     }
 
     private void LateUpdate()
@@ -146,6 +160,7 @@ public class ShaftsGameController : MonoBehaviour
         bool uiPlayerStatsState = false;
         bool uiAboutGameState = false;
         bool uiGameCreditsState = false;
+        bool uiPauseState = false;
 
         switch (GameStats.GameMode)
         {
@@ -167,6 +182,7 @@ public class ShaftsGameController : MonoBehaviour
                 break;
             case GameMode.Paused:
                 uiPlayerStatsState = true;
+                uiPauseState = true;
                 break;
             case GameMode.RestartGameImmediate:
                 break;
@@ -186,6 +202,7 @@ public class ShaftsGameController : MonoBehaviour
         UiPlayerStatsScreen.SafeSetActive(uiPlayerStatsState);
         UiAboutGameScreen.SafeSetActive(uiAboutGameState);
         UiGameCreditsScreen.SafeSetActive(uiGameCreditsState);
+        UiPauseScreen.SafeSetActive(uiPauseState);
     }
 
     private void OnLevelWasLoaded(int level)

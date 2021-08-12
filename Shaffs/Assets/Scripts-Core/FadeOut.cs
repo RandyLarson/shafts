@@ -49,7 +49,7 @@ public class FadeOut : MonoBehaviour
         IsFading = true;
     }
 
-    public void SetTimeScale(TimeScale setTo)
+    static public void SetTimeScale(TimeScale setTo)
     {
         float newScale = 1;
         switch (setTo)
