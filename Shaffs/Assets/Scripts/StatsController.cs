@@ -1,3 +1,4 @@
+using Assets.Scripts.Extensions;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class StatsController : MonoBehaviour
 {
     public PlayerStats PlayerStats;
     public GameStats GameStats;
+    public GameObject ShivIcon;
+    public GameObject FlameIcon;
 
     public TextMeshProUGUI DisplayElement;
     public PlayerStatKind ResourceToDisplay;
@@ -12,7 +15,7 @@ public class StatsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ( DisplayElement == null )
+        if (DisplayElement == null)
             DisplayElement = GetComponent<TextMeshProUGUI>();
     }
 
@@ -34,6 +37,17 @@ public class StatsController : MonoBehaviour
                 break;
             case PlayerStatKind.Gold:
                 value = ((int)PlayerStats.Gold).ToString();
+                break;
+            case PlayerStatKind.CurrentWeapon:
+                bool shiv = false;
+                bool flam = false;
+                if (PlayerStats.CurrentWeaponName.EqualsIgnoreCase("SV"))
+                    shiv = true;
+                else
+                    flam = true;
+                ShivIcon.SafeSetActive(shiv);
+                FlameIcon.SafeSetActive(flam);
+                value = string.Empty;
                 break;
         }
 

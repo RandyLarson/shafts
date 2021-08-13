@@ -4657,7 +4657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: LevelName
-      value: I 2:4
+      value: T2
       objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: PlayerStartLocation

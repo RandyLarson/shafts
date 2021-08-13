@@ -3,7 +3,6 @@ using Assets.Scripts.Helpers;
 using System;
 using System.Linq;
 using UnityEngine;
-
 public class Munition : MonoBehaviour, IDamageInflictor
 {
 	[Tooltip("Unique identifier for weapon.")]

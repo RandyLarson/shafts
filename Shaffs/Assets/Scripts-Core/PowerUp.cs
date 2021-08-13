@@ -1,4 +1,5 @@
-﻿using Milkman;
+﻿using Assets.Scripts.Extensions;
+using Milkman;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -47,18 +48,38 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CheckForHealthPonts(collision.gameObject);
+        if (CheckForHealthPonts(collision.gameObject))
+            return;
+
+        if (CheckForWeaponPowerup(collision.gameObject))
+            return;
+    }
+
+    private bool CheckForWeaponPowerup(GameObject toPowerup)
+    {
+        if (Kind != PowerUpKind.Weapon || Payload == null)
+            return false;
+
+        var mh = toPowerup.GetInterface<IMunitionHolder>();
+        if ( mh != null )
+        {
+            mh.Add(Payload);
+            ItemWasUsed();
+            return true;
+        }
+        return false;
     }
 
     private bool CheckForHealthPonts(GameObject go)
     {
-        if (TimeOfUse != null)
+        if (Kind != PowerUpKind.Health || TimeOfUse != null)
             return false;
 
         var hp = go.gameObject.GetComponent<HealthPoints>();
         if (hp != null)
         {
             ApplyPowerup(hp);
+            ItemWasUsed();
             return true;
         }
 
@@ -72,6 +93,9 @@ public class PowerUp : MonoBehaviour
             return;
 
         if (CheckForHealthPonts(collision.gameObject))
+            return;
+
+        if (CheckForWeaponPowerup(collision.gameObject))
             return;
 
         var thePlayer = collision.gameObject.GetComponent<PlayerShip>();

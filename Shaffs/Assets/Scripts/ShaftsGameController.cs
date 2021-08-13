@@ -36,6 +36,8 @@ public class ShaftsGameController : MonoBehaviour
         GameStats.CurrentPlayer = null;
         GameStats.GameController = null;
 
+        PlayerStats.CurrentWeaponName = "SV";
+
         var fader = LevelStartingScreen.GetComponent<FadeOut>();
         if (fader)
         {

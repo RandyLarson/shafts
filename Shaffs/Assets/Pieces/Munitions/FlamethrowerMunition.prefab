@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 102433943585939652}
   - component: {fileID: 5211554436657822686}
   - component: {fileID: 3671972530368399061}
-  - component: {fileID: 8454354902948698845}
   - component: {fileID: 347614711637870399}
   - component: {fileID: 8954466218610263522}
+  - component: {fileID: 1994293581356485538}
   m_Layer: 0
-  m_Name: Flamethrower
+  m_Name: FlamethrowerMunition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5710678515968824580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5710678515968824580}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -108,7 +108,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -118,7 +118,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -171,7 +171,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 11
+      scalar: 50
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4809,35 +4809,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &8454354902948698845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5710678515968824580}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e125197c64a44048815870bdb60e36d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Identification: Fla
-  Count: 50
-  Capacity: 50
-  TargetTags:
-  - Creature
-  - Breakable
-  DestroyOnContact: 0
-  RequireRigidBody: 1
-  EnableTrigger: 0
-  ChainDetonation: 0
-  LaunchForce: 50
-  FireRate: 1
-  IsSingleUse: 0
-  Explosion: {fileID: 0}
-  ImpactExplosion: {fileID: 0}
-  LoadingAudio: {fileID: 0}
-  IsPlayerMunition: 1
 --- !u!114 &347614711637870399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4868,3 +4839,19 @@ MonoBehaviour:
   DamageAmt: 1
   DamageInterval: 10
   DamageIndicator: {fileID: 0}
+--- !u!114 &1994293581356485538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5710678515968824580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ac545779cead84c91a9fc5e85f655c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetimeRange:
+    min: 2
+    max: 2
+  randomBeforeLifetime: 0

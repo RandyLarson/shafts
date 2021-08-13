@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d156e578d5b923409a6e03a70eff330, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Level: 0
-  Health: 0
+  Level: I 1:4
+  Health: 999
   Gold: 0
+  CurrentWeaponName: SH

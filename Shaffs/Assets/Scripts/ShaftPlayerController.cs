@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Player
 {
-    public class ShaftPlayerController : MonoBehaviour
+    public class ShaftPlayerController : MonoBehaviour, IMunitionHolder
     {
         //public MapController MapController;
         //public SceneObjects SceneObjects;
 
         [Tooltip("A gameobject that will be enabled when contact damage is available.")]
         public GameObject ContactDamageArea;
+
+        public GameObject WeaponMountPoint;
 
         private Rigidbody2D Rigidbody2D { get; set; }
         private Animator WalkingAnimator { get; set; }
@@ -25,6 +27,9 @@ namespace Assets.Scripts.Player
         public int AmmoCount = 20000;
         public PlayerStats PlayerStats;
         public GameStats GameStats;
+
+        public GameObject CurrentAuxArmament;
+        public GameObject[] AuxArmaments;
 
         private int AnimHashIdle { get; set; } = Animator.StringToHash("Idle");
         private int AnimHashShiv { get; set; } = Animator.StringToHash("Shiving");
@@ -118,33 +123,68 @@ namespace Assets.Scripts.Player
                 }
             }
 
-            if (IsFiring)
-            {
-                if (Time.time - AttackingTime > DurationOfShiv)
-                    IsFiring = false;
-            }
 
-            ContactDamageArea.SafeSetActive(IsFiring);
+            if ( CurrentAuxArmament == null )
+            {
+                if (IsFiring)
+                {
+                    if (Time.time - AttackingTime > DurationOfShiv)
+                        IsFiring = false;
+                }
+                ContactDamageArea.SafeSetActive(IsFiring);
+            }
+            else
+            {
+                ContactDamageArea.SafeSetActive(false);
+
+                var itsFireController = CurrentAuxArmament.GetComponent<FireControl>();
+                if ( itsFireController != null )
+                {
+                    //CurrentAuxArmament.SafeSetActive(true);
+                    //IsFiring = itsFireController.CanFire();
+                    if (IsFiring)
+                        itsFireController.Fire();
+                }
+                IsFiring = false;
+            }
 
             LastMv = Movement;
         }
 
         public void OnWeapons(InputValue value)
         {
+            if (GameStats.GameMode != GameMode.Playing)
+                return;
 
+            if ( AuxArmaments.Length > 0 )
+            {
+                if (CurrentAuxArmament == null)
+                    CurrentAuxArmament = AuxArmaments[0];
+                else
+                    CurrentAuxArmament = null;
+            }
+
+            var asMunition = CurrentAuxArmament == null ? null : CurrentAuxArmament.GetComponent<Munition>();
+            PlayerStats.CurrentWeaponName = asMunition != null ? asMunition.Identification : "SV";
         }
 
         public void OnMove(InputValue value)
         {
+            if (GameStats.GameMode != GameMode.Playing)
+                return;
+
             Movement = value.Get<Vector2>();
         }
 
         public void OnFire()
         {
+            if (GameStats.GameMode != GameMode.Playing)
+                return;
+
             //            if (AmmoCount > 0)
             {
-                Debug.Log($"Firing. Ammo remaining: {AmmoCount}");
-                SendFire();
+                //Debug.Log($"Firing. Ammo remaining: {AmmoCount}");
+                //SendFire();
                 IsFiring = true;
                 AttackingTime = Time.time;
             }
@@ -174,6 +214,17 @@ namespace Assets.Scripts.Player
                 OutOfAmmo();
                 SomebodyIsOutOfAmmo();
             }
+        }
+
+        public void Add(Munition toAdd)
+        {
+            Add(toAdd.gameObject);
+        }
+
+        public void Add(GameObject payload)
+        {
+            AuxArmaments[0] = GameObject.Instantiate(payload, WeaponMountPoint.transform);
+            CurrentAuxArmament = null;
         }
     }
 

@@ -4,7 +4,8 @@ public enum PlayerStatKind
 {
     Level,
     Health,
-    Gold
+    Gold,
+    CurrentWeapon
 }
 
 
@@ -14,5 +15,6 @@ public class PlayerStats : ScriptableObject
     public string Level;
     public float Health;
     public float Gold;
+    public string CurrentWeaponName;
 }
 
