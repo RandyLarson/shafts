@@ -63,6 +63,8 @@ MonoBehaviour:
   TargetTags:
   - Creature
   - Breakable
+  - Player
+  - Freight
   DestroyOnContact: 0
   RequireRigidBody: 1
   EnableTrigger: 0

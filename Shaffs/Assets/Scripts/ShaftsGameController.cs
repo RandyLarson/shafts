@@ -50,9 +50,9 @@ public class ShaftsGameController : MonoBehaviour
     private void FixedUpdate()
     {
         var kbd = Keyboard.current;
-        if ( kbd != null )
+        if (kbd != null)
         {
-            if ( kbd.escapeKey.isPressed )
+            if (kbd.escapeKey.isPressed)
             {
                 SwitchToPauseUi();
             }
@@ -104,7 +104,7 @@ public class ShaftsGameController : MonoBehaviour
             case GameMode.Paused:
                 break;
             case GameMode.RestartGameImmediate:
-                LoadOrInitializeScene(false, true);
+                LoadOrInitializeScene(false, true, false);
                 SwitchToGameMode(GameMode.StartingLevel);
                 break;
             case GameMode.AboutGame:
@@ -112,39 +112,49 @@ public class ShaftsGameController : MonoBehaviour
             case GameMode.GameCredits:
                 break;
             case GameMode.RestartLevel:
-                LoadOrInitializeScene(false, false);
+                LoadOrInitializeScene(false, false, true);
                 SwitchToGameMode(GameMode.StartingLevel);
                 break;
             case GameMode.StartTutorial:
-                LoadOrInitializeScene(true, false);
+                LoadOrInitializeScene(true, false, false);
                 SwitchToGameMode(GameMode.StartingLevel);
                 break;
         }
     }
 
-    private void LoadOrInitializeScene(bool loadTutorial, bool loadStartingScene)
+    public enum SceneKind
+    {
+        tutorial,
+        startingLevel,
+        currentScene
+    }
+
+
+    private void LoadOrInitializeScene(bool loadTutorial, bool loadStartingScene, bool reloadCurrentScene)
     {
         if (Application.isEditor && SceneManager.sceneCount > 1)
             loadStartingScene = false;
 
         GameStats.CurrentPlayer.SafeDestroy();
         GameStats.CurrentPlayer = null;
-        if (false == loadStartingScene)
+
+        ShaftsLevelController currentLevel = null;
+        var levelControllers = GameObject.FindGameObjectsWithTag("LevelController");
+        for (int i = 0; i < levelControllers.Length; i++)
         {
-            var levelControllers = GameObject.FindGameObjectsWithTag("LevelController");
-            for (int i = 0; i < levelControllers.Length; i++)
+            currentLevel = levelControllers[i].GetComponent<ShaftsLevelController>();
+
+            if (currentLevel != null)
             {
-                var itsController = levelControllers[i].GetComponent<ShaftsLevelController>();
-                if (itsController != null)
-                {
-                    loadStartingScene = false;
-                    itsController.InitializeLevel();
-                    break;
-                }
+                break;
             }
         }
 
-        if (loadStartingScene)
+        if (reloadCurrentScene && currentLevel != null)
+        {
+            SceneManager.LoadScene(currentLevel.gameObject.scene.name);
+        }
+        else if (loadStartingScene)
         {
             SceneManager.LoadScene(GameStats.StartingLevelName);
         }
@@ -152,7 +162,12 @@ public class ShaftsGameController : MonoBehaviour
         {
             SceneManager.LoadScene(GameStats.StartingTutorialLevel);
         }
+        else if ( currentLevel != null )
+        {
+            currentLevel.InitializeLevel();
+        }
     }
+    
 
     private void AdjustUiElements()
     {

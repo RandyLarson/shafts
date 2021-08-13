@@ -4824,6 +4824,8 @@ MonoBehaviour:
   Domain:
   - Creature
   - Breakable
+  - Freight
+  - Player
 --- !u!114 &8954466218610263522
 MonoBehaviour:
   m_ObjectHideFlags: 0

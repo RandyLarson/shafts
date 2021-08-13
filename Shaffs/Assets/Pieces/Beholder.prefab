@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513869ebe8c0dd545ac638f4b8a846ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 50
+  DamageAmt: 33
   DamageInterval: 0.3
-  DamageIndicator: {fileID: 0}
+  DamageIndicator: {fileID: 5710678515968824580, guid: 5b6ad9279f51a9940ae755b05ea457be, type: 3}
 --- !u!114 &2688498761428630990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  MaxHP: 0
+  HP: 40
+  MaxHP: 40
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
   InventoryKind: 0

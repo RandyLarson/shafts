@@ -3625,7 +3625,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 294360482992503352, guid: 0c0f4b5699f00bb4ca80bb418ef348f7, type: 3}
       propertyPath: NextLevelSceneName
-      value: Level4
+      value: Level-T3
       objectReference: {fileID: 0}
     - target: {fileID: 1210066472380107420, guid: 0c0f4b5699f00bb4ca80bb418ef348f7, type: 3}
       propertyPath: m_RootOrder
@@ -3702,7 +3702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: LevelName
-      value: T3
+      value: T2
       objectReference: {fileID: 0}
     - target: {fileID: 7917912584937354947, guid: 62007ff0cab9e5944a68feb251549206, type: 3}
       propertyPath: ForceNewPlayerSpawn
