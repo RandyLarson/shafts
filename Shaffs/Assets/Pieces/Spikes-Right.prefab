@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8794865570936931743, guid: d9917dded2e61a94d8aa03f6a70d5886, type: 3}
+      propertyPath: DamageOnlyWhenMoving
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9917dded2e61a94d8aa03f6a70d5886, type: 3}

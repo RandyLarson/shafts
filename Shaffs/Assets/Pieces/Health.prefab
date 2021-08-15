@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Kind: 1
-  Amount: 200
+  Amount: 300
   Payload: {fileID: 0}
   UsageEffect: {fileID: 5710678515968824580, guid: 99b0d767c9dbb0347a994a4639ce203c, type: 3}
   RadiusFactor: 2.5
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 10
   RotationAxis: 1
+  RotateWrtVelocity: 0
 --- !u!1 &7850279418765219322
 GameObject:
   m_ObjectHideFlags: 0

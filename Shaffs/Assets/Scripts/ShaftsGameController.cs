@@ -33,8 +33,9 @@ public class ShaftsGameController : MonoBehaviour
         Assets.Scripts.Helpers.MoveToward.Initialize();
 
         GameStats.GameMode = GameMode.StartMenu;
-        GameStats.CurrentPlayer = null;
+        GameStats.DestroyPlayer();
         GameStats.GameController = null;
+        GameStats.Fortune = string.Empty;
 
         PlayerStats.CurrentWeaponName = "SV";
 
@@ -92,8 +93,7 @@ public class ShaftsGameController : MonoBehaviour
         switch (nextMode)
         {
             case GameMode.StartMenu:
-                GameStats.CurrentPlayer.SafeDestroy();
-                GameStats.CurrentPlayer = null;
+                GameStats.DestroyPlayer();
                 break;
             case GameMode.StartingLevel:
                 break;
@@ -135,8 +135,7 @@ public class ShaftsGameController : MonoBehaviour
         if (Application.isEditor && SceneManager.sceneCount > 1)
             loadStartingScene = false;
 
-        GameStats.CurrentPlayer.SafeDestroy();
-        GameStats.CurrentPlayer = null;
+        GameStats.DestroyPlayer();
 
         ShaftsLevelController currentLevel = null;
         var levelControllers = GameObject.FindGameObjectsWithTag("LevelController");

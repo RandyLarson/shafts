@@ -223,7 +223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 101074417390400909, guid: 8a785007de9586343a9e0e3aa02eea25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -284,8 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
-  MaxHP: 0
+  HP: 12
+  MaxHP: 12
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
   InventoryKind: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmt: 5
   DamageInterval: 0.3
+  DamageOnlyWhenMoving: 0
   DamageIndicator: {fileID: 5710678515968824580, guid: 0e468ceda912a554488a06c34b9d8732, type: 3}
 --- !u!114 &691175676583531470
 MonoBehaviour:
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 500
   RotationAxis: 2
+  RotateWrtVelocity: 0
 --- !u!95 &2193179197519217323
 Animator:
   serializedVersion: 3

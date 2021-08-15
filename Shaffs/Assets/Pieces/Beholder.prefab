@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 6134018936601308107}
   m_Layer: 0
   m_Name: Beholder
-  m_TagString: Creature
+  m_TagString: SuperiorCreature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,8 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513869ebe8c0dd545ac638f4b8a846ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 33
+  DamageAmt: 120
   DamageInterval: 0.3
+  DamageOnlyWhenMoving: 0
   DamageIndicator: {fileID: 5710678515968824580, guid: 5b6ad9279f51a9940ae755b05ea457be, type: 3}
 --- !u!114 &2688498761428630990
 MonoBehaviour:
@@ -185,7 +186,7 @@ MonoBehaviour:
   DestroyAtZero: 1
   DestroyParentAtZero: 0
   DisableAtZero: 0
-  Explosion: {fileID: 0}
+  Explosion: {fileID: 5710678515968824580, guid: 20ae7a09cbc024847a5565b09454e065, type: 3}
   Visualizer: {fileID: 0}
 --- !u!114 &7197654927716623122
 MonoBehaviour:

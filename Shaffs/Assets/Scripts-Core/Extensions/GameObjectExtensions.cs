@@ -120,6 +120,28 @@ namespace Assets.Scripts.Extensions
             return asFaces;
         }
 
+        public static void SafeSetActive<T>(this T[] target, bool value) where T : MonoBehaviour
+        {
+            if (target == null)
+                return;
+
+            for (int i = 0; i < target.Length; i++)
+            {
+                target[i].gameObject.SetActive(value);
+            }
+        }
+
+        public static void SafeSetActive(this GameObject[] target, bool value)
+        {
+            if (target == null)
+                return;
+
+            for (int i = 0; i < target.Length; i++)
+            {
+                target[i].SetActive(value);
+            }
+        }
+
         public static void SafeSetActive<T>(this T target, bool value) where T : MonoBehaviour
         {
             if (target == null || target.gameObject == null)

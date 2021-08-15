@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6411731840700262608, guid: 8a785007de9586343a9e0e3aa02eea25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,18 +148,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnOnActivation: {fileID: 0}
-  EnableOnActivation: {fileID: 0}
-  AutoDestroySpawnIn: 2
   SpawnLocation: {fileID: 0}
+  AutoDestroySpawnIn: 2
+  EnableOnActivation: []
+  DisableOnActivation: []
+  DelayFromTriggerToActivation: 5
   SpawnOnInitialTrigger: {fileID: 0}
   AutoDestroyInitialSpawnIn: 2
+  MaxNumberOfActiveSpawnedItems: 1
+  ResetTriggerIn: 5
+  MaxTotalSpawns: 0
   SpawnOnTriggerReset: {fileID: 0}
   AutoDestroyTriggerResetSpawnIn: 2
-  ResetTriggerIn: 5
-  MaxNumberOfActiveSpawnedItems: 1
-  MaxTotalSpawns: 0
-  DelayFromTriggerToActivation: 5
-  ProcessedTimesUp: 0
 --- !u!114 &8843542664353640259
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7633897780883315592}
   m_Layer: 0
   m_Name: Spikes-Center
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
+  HP: 6
   MaxHP: 0
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b1f2e6032cc8340ad290eef4b52241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmt: 4
+  DamageAmt: 1
   DamageInterval: 1
   DamageIndicator: {fileID: 0}
   TagDomain: []
@@ -191,7 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmt: 5
   DamageInterval: 1
-  DamageIndicator: {fileID: 0}
+  DamageOnlyWhenMoving: 1
+  DamageIndicator: {fileID: 5710678515968824580, guid: 0e468ceda912a554488a06c34b9d8732, type: 3}
 --- !u!114 &7633897780883315592
 MonoBehaviour:
   m_ObjectHideFlags: 0

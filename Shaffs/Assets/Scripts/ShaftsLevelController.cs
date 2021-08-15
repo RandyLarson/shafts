@@ -27,8 +27,7 @@ public class ShaftsLevelController : MonoBehaviour
 
         if (ForceNewPlayerSpawn)
         {
-            GameStats.CurrentPlayer.SafeDestroy();
-            GameStats.CurrentPlayer = null;
+            GameStats.DestroyPlayer();
         }
 
         if (LevelName.HasNoContent())

@@ -16,6 +16,10 @@ public class GameObjectCollection
         Members.Remove(go);
     }
 
+    public void Clear()
+    {
+        Members.Clear();
+    }
 
 	public void PruneNullTargets()
 	{

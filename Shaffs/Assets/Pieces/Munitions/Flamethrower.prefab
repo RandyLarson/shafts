@@ -65,6 +65,7 @@ MonoBehaviour:
   - Breakable
   - Player
   - Freight
+  - SuperiorCreature
   DestroyOnContact: 0
   RequireRigidBody: 1
   EnableTrigger: 0

@@ -8,6 +8,7 @@ public class TouchDamage : MonoBehaviour
     public float DamageAmt = 10;
     [Tooltip("The interval between damage being inflicted.")]
     public float DamageInterval = 1;
+    public bool DamageOnlyWhenMoving = false;
 
     [Tooltip("Spawned when damage inflicted")]
     public GameObject DamageIndicator;
@@ -17,54 +18,83 @@ public class TouchDamage : MonoBehaviour
     private float LastInflictedDamageAt = 0;
 
     private TagDomain TagDomain;
+    private Rigidbody2D OurRb { get; set; }
 
     private void Start()
     {
         LastInflictedDamageAt = 0;
         TagDomain = GetComponent<TagDomain>();
+        OurRb = GetComponent<Rigidbody2D>();
     }
 
     private void OnParticleCollision(GameObject other)
     {
         if (TagDomain.IsInDomain(other))
-            InflictDamageUpon(other, other.transform.position);
+        {
+            if (Time.time == LastInflictedDamageAt || Time.time - LastInflictedDamageAt > DamageInterval)
+            {
+                InflictDamageUpon(other, other.transform.position);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-
     {
-        if (TagDomain.IsInDomain(collision.gameObject))
-            Targets.RememberObject(collision.gameObject);
+        TestForRemembering(collision.gameObject);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void TestForRemembering(GameObject toTest)
     {
-        if (TagDomain.IsInDomain(collision.gameObject))
-            InflictDamageUpon(collision.gameObject, collision.contacts[0].point);
+        if (DamageOnlyWhenMoving == true && OurRb != null && OurRb.velocity == Vector2.zero)
+            return;
+
+        if (toTest != gameObject && (TagDomain == null || TagDomain.IsInDomain(toTest)))
+            Targets.RememberObject(toTest);
+    }
+
+    private void TestForClearing()
+    {
+        if (Targets.Members.Count == 0)
+            return;
+
+        if (DamageOnlyWhenMoving == true && OurRb != null && OurRb.velocity == Vector2.zero)
+        {
+            Targets.Clear();
+        }
+    }
+
+    private void TestForForgettion(GameObject toTest)
+    {
+        if (Targets.Members.Count == 0)
+            return;
+
+        TestForClearing();
+
+        if (TagDomain != null && toTest != gameObject && TagDomain.IsInDomain(toTest))
+            Targets.ForgetObject(toTest);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (TagDomain.IsInDomain(collision.gameObject))
-            Targets.ForgetObject(collision.gameObject);
+        TestForForgettion(collision.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (TagDomain.IsInDomain(collision.gameObject))
-            Targets.RememberObject(collision.gameObject);
+        TestForRemembering(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (TagDomain.IsInDomain(collision.gameObject))
-            Targets.ForgetObject(collision.gameObject);
+        TestForForgettion(collision.gameObject);
     }
 
     void Update()
     {
-        if (Time.time - LastInflictedDamageAt > DamageInterval)
+        TestForClearing();
+        if (Targets.Members.Count > 0 && Time.time - LastInflictedDamageAt > DamageInterval)
         {
+
             bool doPrune = false;
             for (int i = 0; i < Targets.Members.Count; i++)
             {

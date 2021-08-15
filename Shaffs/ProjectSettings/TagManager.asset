@@ -10,6 +10,8 @@ TagManager:
   - Breakable
   - Freight
   - LevelController
+  - Rock
+  - SuperiorCreature
   layers:
   - Default
   - TransparentFX

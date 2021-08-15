@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player;
+﻿using Assets.Scripts.Extensions;
+using Assets.Scripts.Player;
 using UnityEditor;
 using UnityEngine;
 
@@ -37,5 +38,11 @@ public class GameStats : ScriptableObject
     public string Fortune;
 
     public string StartingTutorialLevel;
+
+    public void DestroyPlayer()
+    {
+        CurrentPlayer.SafeDestroy();
+        CurrentPlayer = null;
+    }
 }
 

@@ -5,30 +5,38 @@ using UnityEngine;
 [RequireComponent(typeof(TagDomain))]
 public class ActivationTrigger : MonoBehaviour
 {
+    [Tooltip("What to spawn on triggering; may be empty if we are not spawning and item.")]
     public GameObject SpawnOnActivation;
-    public GameObject EnableOnActivation;
-
-    public float AutoDestroySpawnIn = 2;
+    [Tooltip("Where to spawn items; may be empty if we are not spawning and item.")]
     public Transform SpawnLocation;
+    [Tooltip("Destroy spawned items in this time; 0 for never.")]
+    public float AutoDestroySpawnIn = 2;
 
+    public GameObject[] EnableOnActivation;
+    public GameObject[] DisableOnActivation;
+
+    public float DelayFromTriggerToActivation = 5f;
+
+    [Tooltip("Something to spawn when the timer starts, (e.g. sound-effect)")]
     public GameObject SpawnOnInitialTrigger;
+    [Tooltip("When to auto-destroy that the initial trigger item; 0 for never.")]
     public float AutoDestroyInitialSpawnIn = 2;
+
+    public int MaxNumberOfActiveSpawnedItems = 1;
+    public float ResetTriggerIn = 0;
+    public int MaxTotalSpawns = 0;
 
     public GameObject SpawnOnTriggerReset;
     public float AutoDestroyTriggerResetSpawnIn = 2;
-    public float ResetTriggerIn = 0;
-    public int MaxNumberOfActiveSpawnedItems = 1;
-    public int MaxTotalSpawns = 0;
-    private int NumTotalSpawns = 0;
 
-    public float DelayFromTriggerToActivation = 5f;
-    public float? WhenActivatedLast = null;
-    public bool ProcessedTimesUp = false;
-
+    private float? WhenActivatedLast = null;
+    private bool ProcessedTimesUp = false;
     private GameObjectCollection SpawnedItems = new GameObjectCollection();
+    private int NumTotalSpawns = 0;
 
 
     private ITagDomain TagDomain { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +71,7 @@ public class ActivationTrigger : MonoBehaviour
         {
             ProcessedTimesUp = true;
             EnableOnActivation.SafeSetActive(true);
+            DisableOnActivation.SafeSetActive(false);
 
             if (SpawnOnActivation.SafeInstantiate<Transform>(SpawnLocation != null ? SpawnLocation.position : transform.position, out Transform created, AutoDestroySpawnIn))
             {

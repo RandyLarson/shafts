@@ -14,7 +14,8 @@ namespace Assets.Scripts.Player
         public GameObject ContactDamageArea;
 
         public GameObject WeaponMountPoint;
-
+        
+        private AudioSource AudioSource { get; set; }
         private Rigidbody2D Rigidbody2D { get; set; }
         private Animator WalkingAnimator { get; set; }
         private SpriteRenderer SpriteRenderer { get; set; }
@@ -45,6 +46,7 @@ namespace Assets.Scripts.Player
 
         void Start()
         {
+            AudioSource = GetComponent<AudioSource>();
             Rigidbody2D = GetComponent<Rigidbody2D>();
             WalkingAnimator = GetComponent<Animator>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -129,8 +131,13 @@ namespace Assets.Scripts.Player
                 if (IsFiring)
                 {
                     if (Time.time - AttackingTime > DurationOfShiv)
+                    {
                         IsFiring = false;
+                        //AudioSource.Stop();
+                    }
                 }
+                if (IsFiring && !AudioSource.isPlaying)
+                    AudioSource.Play();
                 ContactDamageArea.SafeSetActive(IsFiring);
             }
             else

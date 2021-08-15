@@ -13,11 +13,15 @@ public class Rotation : MonoBehaviour {
 
 	public float RotationSpeed = 10f;
 	public Axis RotationAxis = Axis.Z;
+	public bool RotateWrtVelocity = false;
 
 	private Vector3 RotationVector = Vector3.back;
+	private Rigidbody2D OurRb { get; set; }
 
 	private void Start()
 	{
+		OurRb = GetComponent<Rigidbody2D>();
+
 		switch (RotationAxis)
 		{
 			case Axis.X:
@@ -35,6 +39,13 @@ public class Rotation : MonoBehaviour {
 
 	void Update ()
 	{
-		transform.Rotate(RotationVector, RotationSpeed*Time.deltaTime);
+		float workingSpeed = RotationSpeed;
+
+		if ( RotateWrtVelocity && OurRb != null)
+        {
+			workingSpeed = OurRb.velocity.magnitude * Mathf.Sign(OurRb.velocity.x);
+        }
+
+		transform.Rotate(RotationVector, workingSpeed*Time.deltaTime);
 	}
 }

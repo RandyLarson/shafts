@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 4
-  MaxHP: 4
+  HP: 6
+  MaxHP: 6
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
   InventoryKind: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   DestroyAtZero: 1
   DestroyParentAtZero: 0
   DisableAtZero: 0
-  Explosion: {fileID: 0}
+  Explosion: {fileID: 5710678515968824580, guid: 0c10547eb12d8cf46877b1391f4632f2, type: 3}
   Visualizer: {fileID: 0}
 --- !u!114 &2213887878360890546
 MonoBehaviour:
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmt: 3
   DamageInterval: 0.3
+  DamageOnlyWhenMoving: 0
   DamageIndicator: {fileID: 5710678515968824580, guid: 0e468ceda912a554488a06c34b9d8732, type: 3}
 --- !u!50 &4294122878905084864
 Rigidbody2D:
@@ -211,5 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ToSpawnUponDestruction: {fileID: 5710678515968824580, guid: 5b6ad9279f51a9940ae755b05ea457be, type: 3}
+  SpawnCollection: []
   DoSpawnItem: 1
   LifetimeOfSpawned: 1

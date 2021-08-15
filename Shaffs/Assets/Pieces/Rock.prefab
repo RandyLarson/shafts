@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 4824698964168367380}
   - component: {fileID: 2446396554351038669}
   - component: {fileID: 4070312171932114816}
+  - component: {fileID: -6309138048882610570}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2355182374912193650, guid: 4f5c4d7826b711b49b1d19badcf3573a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f5c4d7826b711b49b1d19badcf3573a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +100,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909948976034572175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ebb1ccd7d785e2045bdec16fddfbc1cf, type: 2}
   m_CullingMode: 0
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67d2225f96d224bb5b4b8fe6c9a392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
+  HP: 80
   MaxHP: 0
   SynchronizeHPWithInventorItem: 0
   InventoryHolder: {fileID: 0}
@@ -131,7 +132,7 @@ MonoBehaviour:
   DestroyAtZero: 1
   DestroyParentAtZero: 0
   DisableAtZero: 0
-  Explosion: {fileID: 0}
+  Explosion: {fileID: 5710678515968824580, guid: aad30909b9d80894c88af06f204165f7, type: 3}
   Visualizer: {fileID: 0}
 --- !u!114 &2213887878360890546
 MonoBehaviour:
@@ -148,6 +149,8 @@ MonoBehaviour:
   Domain:
   - Player
   - Breakable
+  - Creature
+  - SuperiorCreature
 --- !u!114 &8292851026894787089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmt: 10
-  DamageInterval: 2
+  DamageInterval: 0.3
+  DamageOnlyWhenMoving: 1
   DamageIndicator: {fileID: 0}
 --- !u!50 &4294122878905084864
 Rigidbody2D:
@@ -174,7 +178,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -199,7 +203,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 3.5
 --- !u!114 &2446396554351038669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +211,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909948976034572175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16ac545779cead84c91a9fc5e85f655c, type: 3}
   m_Name: 
@@ -229,5 +233,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ToSpawnUponDestruction: {fileID: 0}
+  SpawnCollection:
+  - {fileID: 8120120964491658546, guid: 3c487910bf5d0eb4f9981d4fd9cf3943, type: 3}
+  - {fileID: 8120120964491658546, guid: 3c487910bf5d0eb4f9981d4fd9cf3943, type: 3}
+  - {fileID: 8120120964491658546, guid: 3c487910bf5d0eb4f9981d4fd9cf3943, type: 3}
   DoSpawnItem: 1
-  LifetimeOfSpawned: 1
+  LifetimeOfSpawned: 0
+--- !u!114 &-6309138048882610570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909948976034572175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f163941b738557b4489daf7b81cbf12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: 10
+  RotationAxis: 2
+  RotateWrtVelocity: 1
